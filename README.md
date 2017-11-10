@@ -4,6 +4,6 @@
 
 > Further datas to be implemented on week 46 and 47.
 
-> Fully functionnal version including M... ready for release on week 48.
+> Fully functionnal Snap & M... API ready for release on week 48.
 
 
