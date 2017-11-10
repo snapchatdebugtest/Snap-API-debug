@@ -1,5 +1,5 @@
 {
-  "name": "node.bittrex.api",
+  "name": "node.snap.api",
   "version": "0.6.6",
   "description": "Node Bittrex API - asynchronous node.js library for the Bittrex API https://bittrex.com/",
   "keywords": [
