@@ -1,16 +1,10 @@
 {
   "name": "node.snap.api",
   "version": "0.6.6",
-  "description": "Node Bittrex API - asynchronous node.js library for the Bittrex API https://bittrex.com/",
   "keywords": [
-    "btc",
-    "xbt",
-    "bitcoin",
-    "altcoin",
-    "bittrex"
-  ],
-  "author": "Adrian Soluch ( https://github.com/n0mad01 )",
-  "contributors": [],
+    "MEME",
+    ],
+    "contributors": [],
   "license": "MIT",
   "dependencies": {
     "JSONStream": ">= 0.8.4",
@@ -22,17 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/n0mad01/node.bittrex.api"
   },
   "main": "node.bittrex.api.js",
   "engines": {
     "node": ">=0.10"
   },
-  "bugs": {
-    "url": "https://github.com/n0mad01/node.bittrex.api/issues",
-    "email": "adrian.soluch@gmail.com"
-  },
-  "homepage": "https://github.com/n0mad01/node.bittrex.api",
   "scripts": {
     "test": "mocha"
   },
