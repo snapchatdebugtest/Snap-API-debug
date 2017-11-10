@@ -1,0 +1,110 @@
+{% set navigation_bar = [
+    ('index', '/', 'Home'),
+    ('examples', '/examples', 'Examples'),
+    ('latest', '/latest', 'Latest'),
+    ('custom', '/custom', 'Custom'),
+] -%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}memegen.link{% endblock %}</title>
+
+    <!-- Favicon (http://realfavicongenerator.net) -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/manifest.json">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    {% block meta -%}
+    <!-- Meta tags (general) -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@memegenlink" />
+    <meta name="twitter:title" content="memegen.link" />
+    <meta name="twitter:description" content="The open source meme generator." />
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/logo.png', _external=True) }}" />
+    <meta property="fb:app_id" content="{{ config['FACEBOOK_APP_ID'] }}" />
+    <meta property="og:title" content="memegen.link" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ url_for('index-page.get', _external=True) }}" />
+    <meta property="og:image" content="{{ url_for('static', filename='images/logo.png', _external=True) }}" />
+    <meta property="og:image:width" content="296" />
+    <meta property="og:image:height" content="296" />
+    <meta property="og:description" content="The open source meme generator." />
+    {%- endblock %}
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/stylesheet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/BootstrapXL.css') }}">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ config["GOOGLE_ANALYTICS_TID"] }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+  <body>
+
+    <div class="masthead">
+      <div class="container">
+        <div class="topbar clearfix">
+          <h3 class="masthead-brand">
+            <a class="masthead-brand" href="/">memegen.link</a>
+          </h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              {% for id, href, caption in navigation_bar %}
+                <li{% if id == active_page %} class="active"{% endif
+                %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer hidden-xs">
+      <nav>
+        <ul class="nav masthead-nav footer-nav pull-left">
+          <li>
+             <a href="https://jacebrowning.info" target="_blank">© 2017 Jace Browning</a>
+          </li>
+        </ul>
+        <ul class="nav masthead-nav footer-nav pull-right">
+          <li><a href="https://www.facebook.com/memegenlink" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/memegenlink" target="_blank">Twitter</a></li>
+          <li><a href="{{ config['GITHUB_URL'] }}" target="_blank">GitHub</a></li>
+          <li><a href="/api/" target="_blank">API</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </body>
+</html>

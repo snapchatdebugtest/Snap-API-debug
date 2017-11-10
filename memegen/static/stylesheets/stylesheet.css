@@ -1,0 +1,222 @@
+/*********************************************/
+/* general */
+
+a,
+a:focus,
+a:hover {
+  color: #555;
+  text-decoration: underline;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active:hover {
+  background-color: #555;
+  border-width: 0;
+}
+
+.disable-link {
+  text-decoration: none !important;
+}
+
+/*********************************************/
+/* masthead */
+
+.masthead {
+  background-color: #333;
+  color: #fff;
+  padding-bottom: 10px;
+}
+.masthead-brand {
+  color: #fff;
+  text-decoration: none !important;
+}
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.generator {
+  padding: 8px;
+  color: #555;
+}
+
+/*********************************************/
+/* select2 dropdown */
+
+.select2-dropdown.select2-dropdown--below{
+  width: 320px !important;
+}
+
+.select2-container {
+  display: inline;
+}
+
+.select2-container--default .select2-selection--single{
+  padding: 6px;
+  height: 60px;
+  width: 100%;
+  font-size: 1.2em;
+  position: relative;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  color: #000;
+  font-size: 1.3em;
+  padding: 4px 12px;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 20px;
+}
+
+span.meme-text {
+  color: #555;
+}
+
+/*********************************************/
+/* Meme Generator */
+
+.meme-generator {
+  padding: 0;
+}
+
+.meme-holder {
+  text-align: center;
+  color: #555;
+}
+.meme-holder img {
+  max-width: 300px;
+  margin-right: 8px;
+}
+
+.meme-holder {
+  margin-top: 40px;
+}
+
+/*********************************************/
+/* Meme Templates */
+
+.meme-templates {
+  margin-bottom: 50px;
+  text-align: center;
+  color: #555;
+}
+
+.meme-img {
+  background: url('/images/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  min-width: 120px;
+  max-width: 100%;
+  height: 250px;
+  padding: 20px;
+}
+
+/*********************************************/
+/* Readme */
+
+.readme > hr {
+  margin-top: 0px;
+}
+
+.readme > p {
+  font-size: 16px;
+}
+
+table, th, td {
+   border: 1px solid #555;
+   margin-bottom: 10px;
+}
+
+th, tr, td {
+  height: 40px;
+  padding: 10px;
+}
+
+/*********************************************/
+/* Footer */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 20px;
+  background-color: #333;
+}
+
+.footer-nav {
+  float: none;
+}
+
+/*********************************************/
+/* Responsive Hotness */
+
+@media (min-width: 992px) {
+  .meme-holder {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .masthead {
+
+  }
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+
+  .meme-generator {
+    padding: 0 30px;
+  }
+
+  .generator {
+    padding: 40px;
+  }
+
+  .select2-dropdown.select2-dropdown--below{
+    width: 435px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .masthead .container
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
